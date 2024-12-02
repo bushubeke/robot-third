@@ -1,0 +1,156 @@
+WKD:
+  LoginPage:
+    welcomenote:
+    UserName: "//input[@name='username']"
+    Password: "//input[@name='password']"
+    UserLogo: "//a[@class='mx-auto nav-link']"
+    Loginbtn: "//*[@id='kc-login']"
+    Logout: "//a[text()='Logout']"
+
+
+  SSOPage:
+    nms: "//div[@class='db-product-card'][7]"
+    crm: "//div[contains(text(),'CRMUI')]"
+    upc: "//div[@class='db-product-card'][11]"
+
+CRMPage:
+  LoginPage:
+    welcomenote:
+    UserName: "//input[@name='username']"
+    Password: "//input[@name='password']"
+    UserLogo: "//a[@class='mx-auto nav-link']"
+    Loginbtn: "//*[@id='kc-login']"
+    Logout: "//a[text()='Logout']"
+
+  HomePage:
+    HomeButton: "//a//span[text()='Dashboard']"
+    HomeSearchBar: "//input[@class='MuiInputBase-input']"
+    HomeSearchButton: "//span[@class='MuiIconButton-label']"
+    HomeSearchDropDown: "//select[@class='MuiSelect-root MuiSelect-select MuiSelect-filled MuiInputBase-input MuiFilledInput-input']"
+    HomeSearchOptionServiceId: "//option[@value='serviceId']"
+    Approvals: "//div[contains(text(),'Approvals')]"
+    Approval: "//a[@id='/Approval']"
+    Approval History: "//a[@id='/viewApprovalHistory']"
+    Approval Type Dropdown: "(//label[normalize-space()='Approval Type']/following-sibling::div//div)[2]"
+    DetailsButton: "//tbody/tr[1]/td[6]"
+    ApproveButton: "//button[normalize-space()='Approve']"
+    RejectButton: "//button[normalize-space()='Reject']"
+    ApproveCommentTextarea: "//textarea[@id='comment']"
+    ApproveSubmitButton: "//button[normalize-space()='Submit']"
+    ServiceIdTextInApproval: "//div[normalize-space()='Service ID/MSISDN']/following-sibling::div//span"
+    ApproveSucces: "//span[text()='Approve success']"
+    RejectSuccess: "//span[text()='Reject success']"
+    CreditLimitValue: "//div[normalize-space()='Credit Limit']/following-sibling::div//span"
+    DetailsInApproval: "(//div[@class='tooltip-container  ']/div[2])[1]"
+
+  ServiceDetailsPage:
+    OrderDetailUpdatedPopup: "//span[normalize-space()='Order Details Updated Successfully']"
+    Manageservice: "//div[contains(text(),'Manage Service')]"
+    Documenttype: "(//label[normalize-space()='Document Type']/following-sibling::div//div)[2] "
+    ICCID1: "(//input[@name='ICCID'])[10]"
+    AddfilesButton: "//button[normalize-space()='Add Files']"
+    SubmitButton: "//button[normalize-space()='Submit']"
+    ICCID2: "(//input[@name='ICCID'])[9]"
+    MpesaConfig: "//a[@id='/crm-ui/profile/account/service/mpesaConfig']"
+    ManageSim: "//a[normalize-space()='Change SIM']"
+    ChangeSimButton: "//button[normalize-space()='Change SIM']"
+    NewICCIDSimID: "(//input[@name='ICCID'])[1]"
+    SIMReserved: "//span[text()='SIM Reserved']"
+    NextButton: "//button[normalize-space()='Next >>']"
+    SimChangeReasonDropdown: "(//div[@class=' css-tlfecz-indicatorContainer'])[1]"
+    SimChangeReasonDropdownOption1: "//label[text()='Broken SIM  No Coverage']"
+    SimChangeComment: "//textarea[@id='comment']"
+    PIN1: "//label[normalize-space()='PIN1']"
+    PIN1View: "//label[normalize-space()='PIN1']/following::button[1]"
+    PIN2View: "//label[normalize-space()='PIN2']/following::button[1]"
+    PUK1View: "//label[normalize-space()='PUK1']/following::button[1]"
+    PUK2View: "//label[normalize-space()='PUK2']/following::button[1]"
+    SimChangeSubmit: "//button[@class='sc-bczRLJ kGooYe']"
+
+  Batch:
+    Home: "//a//span[text()='Dashboard']"
+    GetServiceId: "//table/tbody/tr[1]/td[8]"
+    Completestatus: '//table/tbody/tr[1]/td[4]/b'
+    CompletestatusAfterApproval: '//table/tbody/tr[2]/td[4]/b'
+    OrderDetail: '//table/tbody/tr[1]/td[14]/button'
+    OrderDetailView: "//button[@aria-label='View']"
+    Cancel: '//button[text()="Cancel"]'
+    InputFile: "//input[@type='file']"
+    InputOrder: "//input[@id='correlationId']"
+    SubmitButton: "//button[normalize-space()='Submit']"
+    ViewTotal: "(//div[@class='p-0 col-md-3'][normalize-space()='Total'])[1]"
+    ReloadButton: "//div[@class='table_refreshIcon']//div[2]//*[name()='svg']"
+    SearchBatchType: "(//label[normalize-space()='Batch Type']/following-sibling::div//div)[2]"
+    SearchButton: "//button[normalize-space()='Search']"
+    OrderGetText: "//tbody/tr[1]/td[3]"
+    PageNo: "//a[normalize-space()='1']"
+    ViewCharges: "(//td[@role='cell'])[16]/strong/button"
+    BatchTransferServiceSubMenu: "//a[@id='/batchTransferOfService']"
+    AddDestinationProfileID: "//span[@class='input-group-text']"
+    InputDestinationProfileID: "//input[@placeholder='Enter Search Value']"
+    SearchOption: "//button[@aria-label='search']"
+    ProfileIDSelection: "(//input[@title='Toggle Row Selected'])[1]"
+    ServiceTypeDropdown: "//label[normalize-space()='Service Type']/following::div[1]"
+    DestinationTypeDropdown: "//label[normalize-space()='Destination Connection Type']/following::div[1]"
+    AddDestinationAccountID: "//span[@class='input-group-text']"
+    AccountIDSelection: "(//input[@title='Toggle Row Selected'])[1]"
+    InputProfileID: "//input[@id='profileId']"
+    ProfileIDgetText: "//div[normalize-space()='Profile ID']/following::div[1]/span"
+    ApproveSuccess: "//span[text()='Approve success']"
+    DocumentType: "//label[normalize-space()='Document Type']/following::div[1]"
+    Backbutton: "//button[normalize-space()='Back']"
+
+  OrderSearch:
+    Ordertab: "(//div[@class='MuiTypography-root MuiTreeItem-label MuiTypography-body1'])[3]"
+    viewOrder: "//a[@id='/viewOrders']"
+    Ordertype: "//div[@class=' css-g1d714-ValueContainer']"
+    OrderSearchbar: "//input[@id='orderId']"
+    SearchButton: "//button[normalize-space()='Search']"
+    OrderAction: "//tbody/tr[1]/td[11]"
+    OrderView: "//button[@aria-label='View']"
+    OrderOverviewCancelButton: "//button[text()='Cancel']"
+    OrderCloseButton: "//button[@aria-label='close']"
+    InputOrderType: '//*[@id="root"]/div[5]/div[2]/div/div/div/div/div/form/div[2]/div/div[1]/div/div/div/div/div[1]/div[2]/div/input'
+    SelectRefundorder: '//*[@id="react-select-3-option-66"]/label'
+    AdvanceSearch: '//div[@class="text-md-right p-0 mt-1 col-md-6"]/span'
+    AccountId: '//input[@id="billingAccountId"]'
+    SearchDropdown: "(//label[normalize-space()='Order Type']/following-sibling::div//div)[2]"
+    SearchRefresh: "//div[@class='table_refreshIcon']"
+    MoreInfoInOrders: "//span[@class='text-button']"
+    Message: "//tbody/tr[1]/td[7]/div[1]/span[1]"
+
+    StartDate: "(//div[@class='react-datepicker__input-container'])[1]"
+    InputStartDate: "//input[@class='react-datepicker-ignore-onclickoutside']"
+    InputEndDate: "//input[@class='react-datepicker-ignore-onclickoutside']"
+    Today: '//*[@id="root"]/div[5]/div[2]/div/div/div/div/div/form/div[2]/div/div[10]/div/div/div[2]/div[2]/div/div/div[3]'
+    TodayForEnd: '//div[text()="Today"]'
+    Enddate: "(//div[@class='react-datepicker__input-container'])[2]"
+
+  CreditRefund:
+    SetIputServiceID: '//input[@id="serviceId"]'
+    ManageProfile: "//div[text()='Profile']"
+    Comment: '//textarea[@id="comment"]'
+    Submit: '//button[text()="Submit"]'
+
+  Approval:
+    Approvals: '//div[text()="Approvals"]'
+    ClickApproval: '//a[@id="/Approval"]'
+    View: "(//button[@aria-label='Edit'])[1]"
+    ViewCreditVetting: "(//button[@aria-label='Details'])[2]"
+    GetAccountID: "(//div[@class='mdash-value'])[2]/span"
+    Getamount: '//*[@id="root"]/div[5]/div[2]/div/div/div[2]/div/div/div[4]/div[2]/div/div/div[6]/div[2]'
+    ClickApproveButton: '//button[text()="Approve"]'
+    ApprovalHistory: '//a[@id="/viewApprovalHistory"]'
+    ConfigureApproval: "//a[@id='/configureApproval']"
+    ApprovalType: "//label[normalize-space()='Approval Type']/following::div[1]"
+    Search: "//button[normalize-space()='Search']"
+    EditApproval: "(//button[contains(@aria-label,'EDIT')])[1]"
+    YESButton: "//button[normalize-space()='YES']"
+    Page: "(//select[@class='form-control'])[2]"
+    RecordPerPage: "(//option[@value='50'][normalize-space()='50'])[2]"
+    UserDropdown: "//label[normalize-space()='User']/following::div[1]"
+    LevelDropdown: "//label[normalize-space()='Level']/following::div[1]"
+    AddButton: "//button[normalize-space()='Add']"
+    Modify: "//button[normalize-space()='Modify']"
+    CancelButton: "//button[normalize-space()='Cancel']"
+    DeleteButton: "(//button[@aria-label='Delete'])"

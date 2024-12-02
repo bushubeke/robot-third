@@ -1,0 +1,23 @@
+TestData:
+  URL: 'https://keycloak.bp.bss.blueprint.lab/auth/realms/safaricom/account/applications'
+
+  Browser: 'chrome'
+  Environment: 'localtestbed'
+  USER:
+    crm_user1:
+      username: 'crmtest@6d.co.in'
+      password: 'Crmtest@0660'
+    crm_user2:
+      username: 'Crmtest1@6d.co.in'
+      password: 'Crmtest@0770'
+    crm_user3:
+      username: 'crmuser'
+      password: 'Crmtest@123'
+
+  WKD_CRM_TESTDATA: C:/Users/beimnet.bekele/Documents/Enviroments/robot-third/TestData/WKD_TESTDATA_IMPL2.xlsx
+  Screenshot: C:/Users/beimnet.bekele/Documents/Enviroments/robot-third/Result/Sanity_Postpaid_Functions/CRM_IMPL2_Screenshots
+  Failed_Screenshot_Doc: C:/Users/beimnet.bekele/Documents/Enviroments/robot-third/Result/Sanity_Postpaid_Functions/CRM_Postpaid_Failed_Screenshot.docx
+  Success_Screenshot_Doc: C:/Users/beimnet.bekele/Documents/Enviroments/robot-third/Result/Sanity_Postpaid_Functions/CRM_Postpaid_Success_Screenshot.docx
+  WKD_CRM_SCREENSHOT: C:/Users/beimnet.bekele/Documents/Enviroments/robot-third/TestData/WKD_IMPL2_Screenshot.xlsx
+  DownloadDirectory: C:/Users/beimnet.bekele/Documents/Enviroments/robot-third/Result/Sanity_Postpaid_Functions/Batch_Reports_Directory
+
