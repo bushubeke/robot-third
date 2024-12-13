@@ -1,0 +1,4 @@
+TestCaseId,TestDataId,ActionType,ServiceID,COMMENT,REASON,SearchDropdown,FilePath,DocumentType,TYPE,Amount
+TC_001,TD_01,Change SIM-POSTPAID,251799000000,change sim for Perticular Service Id by selecting one perticular imsi number and provide reason and select reason and add comment and submit and check,Simcard Blocked,ChangeSim,somefile,Bank Statements,,0
+TC_002,TD_02,Adjust Main Account Prepaid,251700408785,Adjust Account Increment,Add air time,ChangeSim,Somefile,Bank Statements,Increment,200
+TC_002,TD_03,Adjust Main Account Prepaid,251700408785,Adjust Account Increment,Add air time,ChangeSim,Somefile,Bank Statements,Decrement,140

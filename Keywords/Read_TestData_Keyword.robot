@@ -26,4 +26,17 @@ Fetch From Excel
     Run Keyword If  '${celldata}' == ''  Fail  Data not found for TestCaseID: ${TestCaseID} and TestDataID: ${TestDataID}
     
     # Return the cell data
-    [Return]  ${celldata}
+    RETURN  ${celldata}
+
+
+Fetch From CSV
+    [Arguments]  ${filename}  ${sheetname}  ${TestCaseID}  ${TestDataID}
+    
+    # Fetch cell data using the custom library function
+    ${celldata}=  fetch_from_CSVData  ${filename}  ${sheetname}  ${TestCaseID}  ${TestDataID}
+    
+    # Optional: Add checks to handle situations where data is not found
+    Run Keyword If  '${celldata}' == ''  Fail  Data not found for TestCaseID: ${TestCaseID} and TestDataID: ${TestDataID}
+    
+    # Return the cell data
+    RETURN  ${celldata}

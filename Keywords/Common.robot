@@ -7,16 +7,18 @@ Library     base64
 Library     CSVLibrary
 Library     Process
 Library     Collections
+Library     DateTime
 
 
 Variables    ../page/PageObjects.yaml
 Variables    ../page/TestData.yaml
 Library      ../page/screenshot_library.py
+Library      ../page/value_libraries.py
 Library      ../page/ReadDataFromExcel.py
-Resource     ../Keywords/Read_TestData_Keyword.robot
 Resource     ../Keywords/Approval.robot
 
 *** Variables ***
+${DATE_FORMAT}  %Y-%m-%d
 ${Batch}                    ${CRMPage}[Batch]
 ${Screenshot Directory}     ${TestData}[Screenshot]
 ${SuccessScreenshot_Doc}    ${TestData}[Success_Screenshot_Doc]
@@ -25,8 +27,11 @@ ${HomePage}                 ${CRMPage}[HomePage]
 ${OrderSearch}              ${CRMPage}[OrderSearch]
 ${Failed_Screenshot_Doc}    ${TestData}[Failed_Screenshot_Doc]
 
+${current_date}=  Get Current Date  ${DATE_FORMAT}
 ${TimeOut}            40s
 ${Start}              1s
+${MIN}    1
+${MAX}    10000000
 *** Keywords ***
 
 Custom Error Message
@@ -84,20 +89,27 @@ Search By ID
 Screenshot Details For Passed Feature
     [Documentation]    Screenshot details for passed with test case id, feature, subfeature
     [Arguments]        ${caseID}  ${dataID}
-    ${data}=           Fetch From Excel  ${WKD_CRM_SCREENSHOT}  Screenshot  ${caseID}  ${dataID}
+    ${data}=           fetch_from_ExcelData  ${WKD_CRM_SCREENSHOT}  Screenshot  ${caseID}  ${dataID}
+    Log  ${data}
     ${TestCaseId}=     getData  ${data}  TestCase
     ${MainFeature}=    getData  ${data}  MainFeature
     ${SubFeature}=     getData  ${data}  SubFeature
-    Save Screenshot In Doc      ${SuccessScreenshot_Doc}    ${Screenshot Directory}/PassedScreenshot/${TestCaseId}/${MainFeature}.png   ${TestCaseId}    ${MainFeature}  ${SubFeature}
+    ${random_name}=    Generate Random String  7
+    ${path_name}=      Add Current Date To Name  ${TestCaseId}
+    Log  ${path_name}
+    Save Screenshot In Doc      ${SuccessScreenshot_Doc}    ${Screenshot Directory}/PassedScreenshot/${path_name}/${random_name}.png   ${TestCaseId}    ${MainFeature}  ${SubFeature}
 
 Screenshot Details For Passed Subfeature
     [Documentation]    Screenshot Details For Failed without test case id, feature
     [Arguments]        ${caseID}  ${dataID}
-    ${data}=           Fetch From Excel  ${WKD_CRM_SCREENSHOT}  Screenshot  ${caseID}  ${dataID}
+    ${data}=           fetch_from_ExcelData  ${WKD_CRM_SCREENSHOT}  Screenshot  ${caseID}  ${dataID}
     ${TestCaseId}=     getData  ${data}  TestCase
     ${MainFeature}=    getData  ${data}  MainFeature
     ${SubFeature}=     getData  ${data}  SubFeature
-    Save Screenshot In Doc Without Testcase      ${SuccessScreenshot_Doc}    ${Screenshot Directory}/PassedScreenshot/${TestCaseId}/${MainFeature}.png   ${MainFeature}  ${SubFeature}
+    ${random_name}=    Generate Random String  8
+    ${path_name}=      Add Current Date To Name  ${TestCaseId}
+    Log  ${path_name}
+    Save Screenshot In Doc Without Testcase      ${SuccessScreenshot_Doc}    ${Screenshot Directory}/PassedScreenshot/${path_name}/${random_name}.png   ${MainFeature}  ${SubFeature}
 
 Extract Popup Message
     [Arguments]   ${locator}
@@ -154,7 +166,7 @@ Input Text Verification
 
 Execute Suite Setup as User
      [Documentation]     Open Browser on Test or preproduction environmenta
-     ${BrowserOpened}=    Run Keyword And Return Status       Open Browser    ${CRM}   ${Browser_Name}  ${TestData}[Browser]     options=add_argument("--ignore-certificate-errors")
+     ${BrowserOpened}=    Run Keyword And Return Status       Open Browser    ${CRM}   ${Browser_Name}  options=add_argument("--ignore-certificate-errors")
      Run Keyword If  '${BrowserOpened}' == 'False'  Custom Error Message  Error: Server Unavailability or Internet Connection Issue.
      Run Keyword If  '${BrowserOpened}' == 'False'   Close Window
      Maximize browser window
@@ -162,11 +174,13 @@ Execute Suite Setup as User
 Screenshot Details For Failed Feature
     [Documentation]    Screenshot Details For Failed with test case id, feature, subfeature
     [Arguments]        ${caseID}  ${dataID}
-    ${data}=           Fetch From Excel  ${WKD_CRM_SCREENSHOT}  Screenshot  ${caseID}  ${dataID}
+    ${data}=           fetch_from_ExcelData  ${WKD_CRM_SCREENSHOT}  Screenshot  ${caseID}  ${dataID}
     ${TestCaseId}=     getData  ${data}  TestCase
     ${MainFeature}=    getData  ${data}  MainFeature
     ${SubFeature}=     getData  ${data}  SubFeature
-    Save Failed Screenshot In Doc       ${Failed_Screenshot_Doc}    ${Screenshot Directory}/FailedScreenshot/${TestCaseId}/${MainFeature}.png   ${TestCaseId}    ${MainFeature}  ${SubFeature}
+    ${random_name}=    Generate Random String  7
+    ${path_name}=      Add Current Date To Name  ${TestCaseId}
+    Save Failed Screenshot In Doc       ${Failed_Screenshot_Doc}    ${Screenshot Directory}/FailedScreenshot/${path_name}/${random_name}.png   ${TestCaseId}    ${MainFeature}  ${SubFeature}
 
 Execute Suite Teardown
     [Documentation]     Closes all open browsers and resets the browser cache.

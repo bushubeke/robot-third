@@ -1,0 +1,11 @@
+//form//*[@id="scrollable-auto-tabpanel-0"]/div/p/form/div/div/div[1]/div/div/div
+//*[@id="scrollable-auto-tabpanel-0"]/div/p/form/div
+//*[@id="scrollable-auto-tabpanel-0"]/div/p/form/div
+//*[@id="react-select-2-input"]
+
+#scrollable-auto-tabpanel-0 > div > p > form > div > div > div:nth-child(1) > div > div > div > div > div.css-1wy0on6 > div > svg
+//*[@id="scrollable-auto-tabpanel-0"]/div/p/form/div/div/div[1]/div/div/div/div/div[1]/div[1]
+//*[@id="scrollable-auto-tabpanel-0"]/div/p/form/div/div/div[4]/button[1]
+
+//*[@id="popover-positioned-left"]/div[2]/span/strong[2]/button
+//*[@id="popover-positioned-left"]/div[2]/span/strong[1]/button
